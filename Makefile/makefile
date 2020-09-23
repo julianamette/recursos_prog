@@ -11,6 +11,15 @@ objects: $(OBJECTS_F90)
 executable: $(EXECUTABLE)
 all: objects executable
 
+help:
+	@echo "\
+Options:\n\n\
+  make objects:       compiler makes objects for every *.f90\n\
+  make executable:    compiler makes executable\n\
+  make all:           build all previous\n\
+  make clean:         delete output files\n\
+  make help:          display this help"
+
 %.o: %.f90 
 	$(FC) -c -o $@ $^
 
